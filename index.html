@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScienceLab Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">🧪 ScienceLab</div>
+        <nav>
+            <a href="#" onclick="showHome()">Home</a>
+            <a href="https://discord.gg" target="_blank">Discord</a>
+            <span class="panic-tip">Panic Key: [ ` ] (Backtick)</span>
+        </nav>
+    </header>
+
+    <!-- Main Game Grid View -->
+    <main id="home-view">
+        <h1>Available Modules</h1>
+        <div class="game-grid">
+            
+            <!-- Game Card 1 -->
+            <div class="game-card" onclick="playGame('https://googleusercontent.com')">
+                <div class="thumbnail-placeholder">🏍️</div>
+                <h3>Moto X3M</h3>
+            </div>
+
+            <!-- Game Card 2 -->
+            <div class="game-card" onclick="playGame('https://classroom-6x.lol')">
+                <div class="thumbnail-placeholder">📐</div>
+                <h3>Slope Game</h3>
+            </div>
+        </div>
+    </main>
+
+    <!-- Fullscreen Game Room View -->
+    <div id="game-view" class="hidden">
+        <button class="back-btn" onclick="showHome()">← Back to Hub</button>
+        <div class="iframe-container">
+            <iframe id="game-frame" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Game Room Navigation Logic
+        function playGame(url) {
+            document.getElementById('home-view').classList.add('hidden');
+            document.getElementById('game-view').classList.remove('hidden');
+            document.getElementById('game-frame').src = url;
+        }
+
+        function showHome() {
+            document.getElementById('game-view').classList.add('hidden');
+            document.getElementById('home-view').classList.remove('hidden');
+            document.getElementById('game-frame').src = "";
+        }
+
+        // CowLab Panic Key Feature (Closes site instantly if someone walks by)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === '`') { 
+                // Instantly redirects the current tab to Google Classroom or Google
+                window.location.href = 'https://classroom.google.com';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+/* CowLab Dark Neon Aesthetic */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f0f12;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #16161c;
+    border-bottom: 2px solid #252530;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4ef0a0; /* Accent color */
+}
+
+nav a {
+    color: #aaaaaa;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #4ef0a0;
+}
+
+.panic-tip {
+    background: #252530;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    color: #ff5555;
+}
+
+main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Responsive Responsive Grid layout */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.game-card {
+    background-color: #16161c;
+    border: 2px solid #252530;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: #4ef0a0;
+}
+
+.thumbnail-placeholder {
+    font-size: 3rem;
+    background: #252530;
+    padding: 20px 0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Hidden Utility State */
+.hidden {
+    display: none !important;
+}
+
+/* Game Interface Window Room */
+#game-view {
+    padding: 20px;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+}
+
+.back-btn {
+    align-self: flex-start;
+    background-color: #252530;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.back-btn:hover {
+    background-color: #4ef0a0;
+    color: #000;
+}
+
+.iframe-container {
+    flex-grow: 1;
+    width: 100%;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#game-frame {
+    width: 100%;
+    height: 100%;
+}
