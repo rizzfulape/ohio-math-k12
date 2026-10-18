@@ -3,69 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ScienceLab Hub</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Web Dashboard</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: var(--text-color);
+            margin-bottom: 5px;
+            font-size: 2.5rem;
+        }
+        p.subtitle {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100px;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+        .card h3 {
+            margin: 10px 0 5px 0;
+            font-size: 1.2rem;
+        }
+        .card span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .category-title {
+            width: 100%;
+            max-width: 1000px;
+            margin: 30px 0 15px 0;
+            color: var(--accent-color);
+            border-bottom: 2px solid #334155;
+            padding-bottom: 5px;
+            font-size: 1.4rem;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="logo">🧪 ScienceLab</div>
-        <nav>
-            <a href="#" onclick="showHome()">Home</a>
-            <a href="https://discord.gg" target="_blank">Discord</a>
-            <span class="panic-tip">Panic Key: [ ` ] (Backtick)</span>
-        </nav>
-    </header>
+    <h1>Web Portal</h1>
+    <p class="subtitle">Quick access portal for web utilities and platforms</p>
 
-    <!-- Main Game Grid View -->
-    <main id="home-view">
-        <h1>Available Modules</h1>
-        <div class="game-grid">
-            
-            <!-- Game Card 1 -->
-            <div class="game-card" onclick="playGame('https://googleusercontent.com')">
-                <div class="thumbnail-placeholder">🏍️</div>
-                <h3>Moto X3M</h3>
-            </div>
-
-            <!-- Game Card 2 -->
-            <div class="game-card" onclick="playGame('https://classroom-6x.lol')">
-                <div class="thumbnail-placeholder">📐</div>
-                <h3>Slope Game</h3>
-            </div>
-        </div>
-    </main>
-
-    <!-- Fullscreen Game Room View -->
-    <div id="game-view" class="hidden">
-        <button class="back-btn" onclick="showHome()">← Back to Hub</button>
-        <div class="iframe-container">
-            <iframe id="game-frame" src="" frameborder="0" allowfullscreen></iframe>
-        </div>
+    <!-- Main Arcade Section -->
+    <div class="category-title">Arcade & Sports</div>
+    <div class="grid-container">
+        <a class="card" href="https://retrobowl.me/" target="_blank">
+            <h3>Retro Bowl</h3>
+            <span>Play Free Online Football</span>
+        </a>
+        <a class="card" href="https://dnrweqffuwjtx.cloudfront.net/moto-x3m/" target="_blank">
+            <h3>Moto X3M</h3>
+            <span>Bike Trial Racing Mirror</span>
+        </a>
+        <a class="card" href="https://1v1-lol.github.io/" target="_blank">
+            <h3>1v1.lol</h3>
+            <span>Multiplayer Building Simulator</span>
+        </a>
+        <a class="card" href="https://geometrydash.io" target="_blank">
+            <h3>Geometry Dash</h3>
+            <span>Rhythm Platforming Game</span>
+        </a>
     </div>
 
-    <script>
-        // Game Room Navigation Logic
-        function playGame(url) {
-            document.getElementById('home-view').classList.add('hidden');
-            document.getElementById('game-view').classList.remove('hidden');
-            document.getElementById('game-frame').src = url;
-        }
+    <!-- Horror & Strategy Section -->
+    <div class="category-title">Horror & Strategy</div>
+    <div class="grid-container">
+        <a class="card" href="https://slope-slope.github.io/five-nights-at-freddys/" target="_blank">
+            <h3>FNAF 1</h3>
+            <span>Five Nights at Freddy's</span>
+        </a>
+        <a class="card" href="https://fnaf2.github.io/" target="_blank">
+            <h3>FNAF 2</h3>
+            <span>Five Nights at Freddy's 2</span>
+        </a>
+        <a class="card" href="https://fnaf3.github.io/" target="_blank">
+            <h3>FNAF 3</h3>
+            <span>Five Nights at Freddy's 3</span>
+        </a>
+        <a class="card" href="https://fnaf4.github.io/" target="_blank">
+            <h3>FNAF 4</h3>
+            <span>Five Nights at Freddy's 4</span>
+        </a>
+        <a class="card" href="https://baldis-basics.github.io/" target="_blank">
+            <h3>Baldi's Basics</h3>
+            <span>Classic Indie Horror Game</span>
+        </a>
+    </div>
 
-        function showHome() {
-            document.getElementById('game-view').classList.add('hidden');
-            document.getElementById('home-view').classList.remove('hidden');
-            document.getElementById('game-frame').src = "";
-        }
+    <!-- Web Tools & Audio Section -->
+    <div class="category-title">Utilities & Audio Tools</div>
+    <div class="grid-container">
+        <a class="card" href="https://croxyproxy.com" target="_blank">
+            <h3>Online Proxy / VPN</h3>
+            <span>Web-based unblock tool</span>
+        </a>
+        <a class="card" href="https://myinstants.com" target="_blank">
+            <h3>Soundboard</h3>
+            <span>Instant sounds and audio buttons</span>
+        </a>
+    </div>
 
-        // CowLab Panic Key Feature (Closes site instantly if someone walks by)
-        document.addEventListener('keydown', function(e) {
-            if (e.key === '`') { 
-                // Instantly redirects the current tab to Google Classroom or Google
-                window.location.href = 'https://classroom.google.com';
-            }
-        });
-    </script>
 </body>
 </html>
